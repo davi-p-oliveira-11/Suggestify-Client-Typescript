@@ -8,14 +8,26 @@ export const metadata: Metadata = {
   description: "Smart and seamless suggestion platform.",
 };
 
+const oxanium = Oxanium({
+  weight: ["500", "600"],
+  subsets: ["latin"],
+  variable: "--font-oxanium",
+});
+
+const montserrat = Montserrat({
+  weight: ["400", "600"],
+  subsets: ["latin"],
+  variable: "--font-montserrat",
+});
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="bg-black text-white text-4xl font-bold">{children}</body>
+    <html lang="en" className={`${oxanium.variable} ${montserrat.variable}`}>
+      <body className="bg-gray-900 text-gray-100 antialiased">{children}</body>
     </html>
   );
 }
